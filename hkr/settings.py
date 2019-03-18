@@ -27,7 +27,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#Admin Login
+SESSION_EXPIRE_AT_BROWSER_CLOSE =True
 
+SESSION_COOKIE_AGE = 6000
+
+LOGIN_URL = '/background/login/'
+
+#AUTH_USER_MODEL ='six0.admin'
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'six0',
 ]
+AUTH_USER_MODEL ='six0.Userprofile'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,7 +63,7 @@ ROOT_URLCONF = 'hkr.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, './static/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,3 +131,4 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+

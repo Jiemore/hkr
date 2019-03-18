@@ -20,5 +20,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('commodity/',views.commodity),
     path('signup/',views.signup),
-	path('order/',views.Order_)
+    path('order/',views.Order_),
+    path('pay/',views.Pay),
+	#Background Manage
+    path('',views.Index),
+    path('session_test/',views.session_test),
+    path('background/index/',views.Index),
+    path('background/login/',views.Login),
+    path('background/logout/',views.Logout),
+    path('test',views.query),
 ]

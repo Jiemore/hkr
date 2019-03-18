@@ -1,5 +1,8 @@
 from django.db import models
-
+from django.contrib.auth.models import (AbstractBaseUser,
+										AbstractUser,
+										User,
+										UserManager)
 # Create your models here.
 
 #商品
@@ -40,3 +43,10 @@ class order_list(models.Model):
 	goods_price   = models.DecimalField(max_digits=5, decimal_places=2)	#价格
 	reserved_State= models.IntegerField(null = True)				#收货状态
 	reserved_Time = models.DateTimeField(null = True)				#收货时间
+
+#后台用户管理
+class Userprofile(AbstractUser):
+#	identifier = models.CharField(max_length=40, unique=True)
+#	USERNAME_FIELD = 'identifier'
+
+	session = models.CharField(max_length=40,null=True)

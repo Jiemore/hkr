@@ -1,0 +1,17 @@
+<table border="1"> 
+  <caption>   Result of Query  </caption>
+	<tr>
+	<th>序号<th/>
+	<th>1<th/>
+	<th>序号<th/>
+	<th>1<th/>
+	</tr>
+    {% for i in result %}
+      <tr>
+        {% for j in i %}
+        <th>{{ j }} </th>
+        {% endfor %}        
+	  </tr>
+    {% endfor %}
+</table>
+
